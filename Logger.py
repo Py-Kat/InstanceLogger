@@ -22,14 +22,15 @@ while True:
     if menu_prompt == "1":
         while True:
             instance_id = input(
-                "\n\n| Enter Instance Name & ID or input 'exit' to return to menu!"
+                "\n\n| Enter Instance Name & ID or input 'menu' to return to menu!"
+                +Fore.YELLOW+
+                "\n| Example: 'world name 12345'"
                 +Fore.RED+
-                "\n| Please keep entry formatting CONSISTENT for duplicate checking!"
+                "\n\n| Please keep entry formatting CONSISTENT for duplicate checking!"
                 +Fore.CYAN+
-                "\n| ( Ex: 'world name #12345' )"
                 "\n\n| > "
             ).lower()
-            if instance_id == "exit":
+            if instance_id == "menu":
                 break
             elif instance_id.strip() == "":
                 print(inv_put)
@@ -57,21 +58,20 @@ while True:
                             )
                             sleep(2)
                             break
-                        else:
-                            time_stamp = datetime.now().strftime(
-                                "%A, %B %d, %Y @%I:%M %p"
-                            )
-                            log.write(
-                                f"\n\n{time_stamp}"
-                                f"\n{instance_id.replace(" ", "-")}"
-                            )
-                            print(
-                                Fore.GREEN+
-                                "\n\n| Logged Successfully!"
-                                +Fore.CYAN
-                            )
-                            sleep(3)
-                            break
+                        time_stamp = datetime.now().strftime(
+                            "%A, %B %d, %Y @%I:%M %p"
+                        )
+                        log.write(
+                            f"\n\n{time_stamp}"
+                            f"\n{instance_id.replace(" ", "-")}"
+                        )
+                        print(
+                            Fore.GREEN+
+                            "\n\n| Logged Successfully!"
+                            +Fore.CYAN
+                        )
+                        sleep(3)
+                        break
                 else:
                     print(inv_put)
                     sleep(2)
@@ -91,13 +91,16 @@ while True:
                     break
                 print(
                     "\n\n| Instance Logs:"
+                    +Fore.RED+
+                    "\n| Dashes are added automatically for consistency."
+                    +Fore.CYAN+
                     f"\n\n{contents}"
                 )
                 log_prompt = input(
-                    "\n\n| Press ENTER to proceed or input 'edit' to open the .txt file"
+                    "\n\n| Press ENTER to proceed or input 'open' to open the .txt file"
                     "\n\n> "
                 )
-                if log_prompt == "edit":
+                if log_prompt == "open":
                     from subprocess import Popen
                     Popen(["notepad.exe", "Log/InstanceIDs.txt"])
                     input(

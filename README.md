@@ -1,7 +1,7 @@
 # VRChat Instance Tracker!
 This is for the **VRChat 
 players** who constantly find themselves 
-rejoining the same instances they've 
+re-joining the same instances they've 
 already visited!
 
 ## General Description:
@@ -24,15 +24,15 @@ text logging / checking needs! This
 was just my original idea 
 behind the creation.
 
+### Future Plans:
+- Blacklisting
+- Better Checking Against Logs
+- Overall Enhancements
+- MAYBE an actual UI
+
 ## Final Note:
 If you experience any **issues**, 
 or have any **suggestions** I'd 
 love to hear them! I 
 am new to programming so 
 **criticism is appreciated**!
-
-## Future Plans:
-- Blacklisting
-- Better Checking Against Logs
-- Overall Enhancements
-- MAYBE an actual UI
