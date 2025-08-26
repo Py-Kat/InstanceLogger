@@ -1,4 +1,4 @@
-# VRChat Instance Tracker!
+# [VRChat](https://hello.vrchat.com) Instance Tracker!
 This is for the **VRChat 
 players** who constantly find themselves 
 re-joining the same instances they've 
