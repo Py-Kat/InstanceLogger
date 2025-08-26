@@ -22,11 +22,16 @@ while True:
     if menu_prompt == "1":
         while True:
             instance_id = input(
-                "\n\n| Enter Instance Name & ID or press 'ENTER' to return to menu!"
-                "\n| ( Ex: 'World Name #12345' )"
+                "\n\n| Enter Instance Name & ID or input 'exit' to return to menu!"
+                +Fore.RED+
+                "\n| Please keep entry formatting CONSISTENT for duplicate checking!"
+                +Fore.CYAN+
+                "\n| ( Ex: 'world name #12345' )"
                 "\n\n| > "
             ).lower()
-            if instance_id.strip() == "":
+            if instance_id == "exit":
+                break
+            elif instance_id.strip() == "":
                 print(inv_put)
                 sleep(2)
                 continue
@@ -76,6 +81,14 @@ while True:
             with open(f"Log/InstanceIDs.txt", "r") as log:
                 log.seek(0)
                 contents = log.read()
+                if contents == "":
+                    print(
+                        Fore.RED+
+                        "\n\n| Nothing Logged!"
+                        +Fore.CYAN
+                    )
+                    sleep(2)
+                    break
                 print(
                     "\n\n| Instance Logs:"
                     f"\n\n{contents}"
@@ -104,7 +117,7 @@ while True:
             print(
                 "\n\n| Clearing..."
             )
-            sleep(2)
+            sleep(1)
 
     elif menu_prompt == "4":
         break
