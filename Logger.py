@@ -50,6 +50,28 @@ while True:
                 print(inv_put)
                 sleep(2)
                 continue
+            with open("Log/blacklist.txt", "r") as blacklist:
+                blacklist.seek(0)
+                existing_blacklists = {line.strip() for line in blacklist}
+                if instance_id.replace(" ", "-") in existing_blacklists:
+                    print(
+                        Fore.RED +
+                        "\n\n| You have this instance BLACKLISTED!"
+                        + Fore.CYAN
+                    )
+                    sleep(3)
+                    continue
+            with open("Log/InstanceIDs.txt", "r") as log:
+                log.seek(0)
+                existing_ids = {line.strip() for line in log}
+                if instance_id.replace(" ", "-") in existing_ids:
+                    print(
+                        Fore.RED +
+                        "\n\n| You have already been here! Not logging..."
+                        + Fore.CYAN
+                    )
+                    sleep(2)
+                    continue
             while True:
                 confirm_prompt = input(
                     "\n\n| Does this entry look correct? ( Y / N )"
@@ -61,28 +83,8 @@ while True:
                 if confirm_prompt == "N":
                     break
                 elif confirm_prompt == "Y":
-                    with open ("Log/blacklist.txt", "r") as blacklist:
-                        blacklist.seek(0)
-                        existing_blacklists = {line.strip() for line in blacklist}
-                        if instance_id.replace(" ", "-") in existing_blacklists:
-                            print(
-                                Fore.RED+
-                                "\n\n| You have this instance BLACKLISTED!"
-                                +Fore.CYAN
-                            )
-                            sleep(2)
-                            break
                     with open("Log/InstanceIDs.txt", "+a") as log:
                         log.seek(0)
-                        existing_ids = {line.strip() for line in log}
-                        if instance_id.replace(" ", "-") in existing_ids:
-                            print(
-                                Fore.RED+
-                                "\n\n| You have already been here! Not logging..."
-                                +Fore.CYAN
-                            )
-                            sleep(2)
-                            break
                         time_stamp = datetime.now().strftime(
                             "%A, %B %d, %Y @%I:%M %p"
                         )
@@ -122,6 +124,17 @@ while True:
                 print(inv_put)
                 sleep(2)
                 continue
+            with open("Log/blacklist.txt", "r") as blacklist:
+                blacklist.seek(0)
+                existing_blacklists = {line.strip() for line in blacklist}
+                if blacklist_id.replace(" ", "-") in existing_blacklists:
+                    print(
+                        Fore.RED +
+                        "\n\n| You have already blacklisted this instance!"
+                        + Fore.CYAN
+                    )
+                    sleep(2)
+                    continue
             while True:
                 confirm_prompt = input(
                     "\n\n| Does this entry look correct? ( Y / N )"
@@ -135,15 +148,6 @@ while True:
                 elif confirm_prompt == "Y":
                     with open("Log/blacklist.txt", "a+") as blacklist:
                         blacklist.seek(0)
-                        existing_blacklists = {line.strip() for line in blacklist}
-                        if blacklist_id.replace(" ", "-") in existing_blacklists:
-                            print(
-                                Fore.RED +
-                                "\n\n| You have already blacklisted this instance!"
-                                + Fore.CYAN
-                            )
-                            sleep(2)
-                            break
                         time_stamp = datetime.now().strftime(
                             "%A, %B %d, %Y @%I:%M %p"
                         )
