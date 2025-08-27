@@ -116,11 +116,22 @@ while True:
                     continue
 
     elif menu_prompt == "3":
-        with open("Log/InstanceIDs.txt", "w"):
-            print(
-                "\n\n| Clearing..."
-            )
-            sleep(1)
+        with open("Log/InstanceIDs.txt", "r") as log:
+            log.seek(0)
+            contents = log.read()
+            if contents == "":
+                print(
+                    Fore.RED+
+                    "\n\n| Nothing Logged!"
+                    +Fore.CYAN
+                )
+                sleep(2)
+                continue
+            with open("Log/InstanceIDs.txt", "w"):
+                print(
+                    "\n\n| Clearing..."
+                )
+                sleep(1)
 
     elif menu_prompt == "4":
         break
