@@ -23,7 +23,7 @@ window.resizable(
     False
 )
 window.config(
-    background = default_back
+    background=default_back
 )
 
 # Instance Entry
@@ -66,10 +66,12 @@ instance_entry_label.place(
 # vrc_log Instance Button
 def log_instance():
     with open ("vrc_log/instances.txt", "r") as log:
-        user_input = instance_entry.get().replace(" ", "-").lower()
-        instance = user_input
+        user_input = instance_entry.get()
+        instance = user_input.replace(" ", "-").lower()
         log.seek(0)
         existing_ids = {line.strip() for line in log}
+        if user_input.strip() == "":
+            return
         if instance.replace(" ", "-") in existing_ids:
             already_logged = tk.Toplevel(window)
             already_logged.title("")
