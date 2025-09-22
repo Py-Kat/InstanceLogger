@@ -32,7 +32,7 @@ instance_entry = tk.Entry(
     width = 25,
     font=(
         "Helvetica",
-        14,
+        16,
         "bold"
     )
 )
@@ -48,7 +48,7 @@ instance_entry_label = tk.Label(
     text="Enter instance NAME & ID:",
     font=(
         "Helvetica",
-        14,
+        18,
         "bold"
     )
 )
@@ -150,23 +150,23 @@ def log_instance():
 
 submit_button = tk.Button(
     window,
-    text="Submit",
+    text="Submit Entry",
     command=log_instance,
     font=(
         "Helvetica",
-        14,
+        20,
         "bold"
     )
 )
 submit_button.config(
     activebackground=default_fore,
-    activeforeground=default_back,
+    activeforeground="#00FF00",
     background=default_fore,
     foreground=default_back,
 )
 submit_button.place(
     relx=0.5,
-    rely=0.5,
+    rely=0.35,
     anchor="n"
 )
 
