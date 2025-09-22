@@ -68,6 +68,8 @@ def log_instance():
     user_input = instance_entry.get()
     instance = user_input.replace(" ", "-")
     with open ("vrc_log/blacklist.txt", "r") as blacklist:
+        if user_input.strip() == "":
+            return
         blacklist.seek(0)
         blacklisted_instances = {line.strip() for line in blacklist}
         if instance in blacklisted_instances:
