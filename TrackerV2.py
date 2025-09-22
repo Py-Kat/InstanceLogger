@@ -102,6 +102,7 @@ def log_instance():
                 rely=0.5,
                 anchor="center"
             )
+            instance_entry.delete(0, tk.END)
             return
         stamp = datetime.now().strftime("%d/%m/%Y | %H:%M:%S")
         with open ("vrc_log/instances.txt", "a+") as l:
@@ -143,6 +144,7 @@ def log_instance():
             rely=0.5,
             anchor="center"
         )
+        instance_entry.delete(0, tk.END)
         return
 
 
