@@ -50,7 +50,7 @@ while True:
                 print(inv_put)
                 sleep(2)
                 continue
-            with open("Log/blacklist.txt", "r") as blacklist:
+            with open("vrc_log/blacklist.txt", "r") as blacklist:
                 blacklist.seek(0)
                 existing_blacklists = {line.strip() for line in blacklist}
                 if instance_id.replace(" ", "-") in existing_blacklists:
@@ -61,7 +61,7 @@ while True:
                     )
                     sleep(3)
                     continue
-            with open("Log/InstanceIDs.txt", "r") as log:
+            with open("vrc_log/instances.txt", "r") as log:
                 log.seek(0)
                 existing_ids = {line.strip() for line in log}
                 if instance_id.replace(" ", "-") in existing_ids:
@@ -83,7 +83,7 @@ while True:
                 if confirm_prompt == "N":
                     break
                 elif confirm_prompt == "Y":
-                    with open("Log/InstanceIDs.txt", "+a") as log:
+                    with open("vrc_log/instances.txt", "+a") as log:
                         log.seek(0)
                         time_stamp = datetime.now().strftime(
                             "%A, %B %d, %Y @%I:%M %p"
@@ -124,7 +124,7 @@ while True:
                 print(inv_put)
                 sleep(2)
                 continue
-            with open("Log/blacklist.txt", "r") as blacklist:
+            with open("vrc_log/blacklist.txt", "r") as blacklist:
                 blacklist.seek(0)
                 existing_blacklists = {line.strip() for line in blacklist}
                 if blacklist_id.replace(" ", "-") in existing_blacklists:
@@ -146,7 +146,7 @@ while True:
                 if confirm_prompt == "N":
                     break
                 elif confirm_prompt == "Y":
-                    with open("Log/blacklist.txt", "a+") as blacklist:
+                    with open("vrc_log/blacklist.txt", "a+") as blacklist:
                         blacklist.seek(0)
                         time_stamp = datetime.now().strftime(
                             "%A, %B %d, %Y @%I:%M %p"
@@ -169,7 +169,7 @@ while True:
     # View Logged Instances
     elif menu_prompt == "3":
         while True:
-            with open("Log/InstanceIDs.txt", "r") as log:
+            with open("vrc_log/instances.txt", "r") as log:
                 log.seek(0)
                 contents = log.read()
                 if contents == "":
@@ -193,7 +193,7 @@ while True:
                 )
                 if log_prompt == "open":
                     from subprocess import Popen
-                    Popen(["notepad.exe", "Log/InstanceIDs.txt"])
+                    Popen(["notepad.exe", "vrc_log/instances.txt"])
                     input(
                         "\n\n| Press ENTER to continue..."
                         "\n\n> "
@@ -209,7 +209,7 @@ while True:
     # View Blacklists
     elif menu_prompt == "4":
         while True:
-            with open("Log/blacklist.txt", "r") as blacklist:
+            with open("vrc_log/blacklist.txt", "r") as blacklist:
                 blacklist.seek(0)
                 contents = blacklist.read()
                 if contents == "":
@@ -233,7 +233,7 @@ while True:
                 )
                 if blacklist_prompt == "open":
                     from subprocess import Popen
-                    Popen(["notepad.exe", "Log/blacklist.txt"])
+                    Popen(["notepad.exe", "vrc_log/blacklist.txt"])
                     input(
                         "\n\n| Press ENTER to continue..."
                         "\n\n> "
@@ -248,7 +248,7 @@ while True:
 
     # Clear Logged Instances
     elif menu_prompt == "5":
-        with open("Log/InstanceIDs.txt", "r") as log:
+        with open("vrc_log/instances.txt", "r") as log:
             log.seek(0)
             contents = log.read()
             if contents == "":
@@ -259,7 +259,7 @@ while True:
                 )
                 sleep(2)
                 continue
-            with open("Log/InstanceIDs.txt", "w"):
+            with open("vrc_log/instances.txt", "w"):
                 print(
                     "\n\n| Clearing..."
                 )
