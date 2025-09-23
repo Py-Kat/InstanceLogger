@@ -22,6 +22,13 @@ to this problem!
 > a simple text logger/checker
 > meant to run **independently** alongside
 > the client!
+> 
+> Furthermore, this program is NOT
+> an official production from VRChat
+> themselves, but instead a simple
+> project I have decided to
+> create and maintain for myself
+> and others!
 
 ## | General Description:
 This program is essentially a
