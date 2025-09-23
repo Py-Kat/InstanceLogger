@@ -451,7 +451,7 @@ close_button.config(
 )
 close_button.place(
     relx=0.5,
-    rely=0.99,
+    rely=0.75,
     anchor="s"
 )
 
