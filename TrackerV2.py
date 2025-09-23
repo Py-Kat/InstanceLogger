@@ -16,7 +16,7 @@ window.iconphoto(
     )
 )
 window.geometry(
-    "540x480"
+    "440x380"
 )
 window.resizable(
     False,
@@ -204,7 +204,7 @@ submit_button.config(
     activebackground=default_fore,
     activeforeground="#00FF00",
     background=default_fore,
-    foreground=default_back,
+    foreground=default_back
 )
 submit_button.place(
     relx=0.5,
@@ -315,7 +315,7 @@ blacklist_button.config(
     activebackground=default_fore,
     activeforeground="#FF0000",
     background=default_fore,
-    foreground=default_back,
+    foreground=default_back
 )
 blacklist_button.place(
     relx=0.5,
