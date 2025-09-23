@@ -240,7 +240,7 @@ view_log_button.place(
 #Clear Log Function
 def clear_log():
     with open ("vrc_log/instances.txt", "w") as log:
-        log.write("")
+        log.seek(0)
         return
 
 
@@ -405,7 +405,7 @@ view_blacklist_button.place(
 # Clear Blacklist Function
 def clear_blacklist():
     with open("vrc_log/blacklist.txt", "w") as blacklist:
-        blacklist.write("")
+        blacklist.seek(0)
         return
 
 
