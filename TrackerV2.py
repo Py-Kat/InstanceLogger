@@ -455,4 +455,24 @@ close_button.place(
     anchor="s"
 )
 
+# Version Label
+version_label = tk.Label(
+    window,
+    text="v2.0!",
+    font=(
+        "Helvetica",
+        12,
+        "bold"
+    )
+)
+version_label.config(
+    background=default_back,
+    foreground=default_fore
+)
+version_label.place(
+    relx=0.01,
+    rely=0.01,
+    anchor="nw"
+)
+
 window.mainloop()
