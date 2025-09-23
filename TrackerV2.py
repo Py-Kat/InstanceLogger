@@ -1,5 +1,6 @@
 import tkinter as tk
 from datetime import datetime
+from subprocess import Popen
 
 default_back = "#0759A3"
 default_fore = "#1F1F1F"
@@ -212,6 +213,29 @@ submit_button.place(
     anchor="n"
 )
 
+# View Logs Button
+view_log_button = tk.Button(
+    window,
+    text="View Logged Instances",
+    command=lambda: Popen(["notepad.exe", "vrc_log/instances.txt"]),
+    font=(
+        "Helvetica",
+        10,
+        "bold"
+    )
+)
+view_log_button.config(
+    activebackground=default_fore,
+    activeforeground=default_back,
+    background=default_fore,
+    foreground=default_back
+)
+view_log_button.place(
+    relx=0.01,
+    rely=0.9,
+    anchor="sw"
+)
+
 
 # Blacklist Entry Function
 def blacklist_instance():
@@ -319,9 +343,54 @@ blacklist_button.config(
 )
 blacklist_button.place(
     relx=0.5,
-    rely=0.6,
+    rely=0.55,
     anchor="n"
 )
 
+# View Blacklist Button
+view_blacklist_button = tk.Button(
+    window,
+    text="View Blacklisted Instances",
+    command=lambda: Popen(["notepad.exe", "vrc_log/blacklist.txt"]),
+    font=(
+        "Helvetica",
+        10,
+        "bold"
+    )
+)
+view_blacklist_button.config(
+    activebackground=default_fore,
+    activeforeground=default_back,
+    background=default_fore,
+    foreground=default_back
+)
+view_blacklist_button.place(
+    relx=0.01,
+    rely=0.99,
+    anchor="sw"
+)
+
+# Close Button
+close_button = tk.Button(
+    window,
+    text="Close",
+    command=window.destroy,
+    font=(
+        "Helvetica",
+        10,
+        "bold"
+    )
+)
+close_button.config(
+    activebackground="#750000",
+    activeforeground=default_fore,
+    background="#750000",
+    foreground=default_fore
+)
+close_button.place(
+    relx=0.99,
+    rely=0.99,
+    anchor="se"
+)
 
 window.mainloop()
