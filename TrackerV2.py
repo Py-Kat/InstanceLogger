@@ -237,6 +237,37 @@ view_log_button.place(
 )
 
 
+#Clear Log Function
+def clear_log():
+    with open ("vrc_log/instances.txt", "w") as log:
+        log.write("")
+        return
+
+
+# Clear Log Button
+clear_log_button = tk.Button(
+    window,
+    text="Clear Logged Instances",
+    command=clear_log,
+    font=(
+        "Helvetica",
+        10,
+        "bold"
+    )
+)
+clear_log_button.config(
+    activebackground=default_fore,
+    activeforeground="#750000",
+    background=default_fore,
+    foreground="#750000"
+)
+clear_log_button.place(
+    relx=0.99,
+    rely=0.9,
+    anchor="se"
+)
+
+
 # Blacklist Entry Function
 def blacklist_instance():
     with open ("vrc_log/blacklist.txt", "r") as log:
@@ -368,6 +399,37 @@ view_blacklist_button.place(
     relx=0.01,
     rely=0.99,
     anchor="sw"
+)
+
+
+# Clear Blacklist Function
+def clear_blacklist():
+    with open("vrc_log/blacklist.txt", "w") as blacklist:
+        blacklist.write("")
+        return
+
+
+# Clear Blacklist Button
+clear_blacklist_button = tk.Button(
+    window,
+    text="Clear Blacklisted Instances",
+    command=clear_blacklist,
+    font=(
+        "Helvetica",
+        10,
+        "bold"
+    )
+)
+clear_blacklist_button.config(
+    activebackground=default_fore,
+    activeforeground="#750000",
+    background=default_fore,
+    foreground="#750000"
+)
+clear_blacklist_button.place(
+    relx=0.99,
+    rely=0.99,
+    anchor="se"
 )
 
 # Close Button
