@@ -377,7 +377,7 @@ close_button = tk.Button(
     command=window.destroy,
     font=(
         "Helvetica",
-        10,
+        8,
         "bold"
     )
 )
@@ -388,9 +388,9 @@ close_button.config(
     foreground=default_fore
 )
 close_button.place(
-    relx=0.99,
+    relx=0.5,
     rely=0.99,
-    anchor="se"
+    anchor="s"
 )
 
 window.mainloop()
