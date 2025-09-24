@@ -1,9 +1,22 @@
 import tkinter as tk
 from datetime import datetime
 from subprocess import Popen
+import sys
+import os
+
+
+# noinspection PyProtectedMember
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS
+    except AttributeError:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
+
 
 default_back = "#0759A3"
 default_fore = "#1F1F1F"
+icon_path = resource_path("icon.png")
 
 # Main Menu
 window = tk.Tk()
@@ -13,7 +26,7 @@ window.title(
 window.iconphoto(
     True,
     tk.PhotoImage(
-        file="icon.png"
+        file=icon_path
     )
 )
 window.geometry(
