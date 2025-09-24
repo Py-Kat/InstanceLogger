@@ -471,7 +471,7 @@ close_button.place(
 # Version Label
 version_label = tk.Label(
     window,
-    text="v2.0!",
+    text="v2.0.1!",
     font=(
         "Helvetica",
         12,
